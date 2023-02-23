@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+    body{
+     background-image:url('https://t4.ftcdn.net/jpg/04/87/84/43/360_F_487844376_Sowh337W2pQ3YRLI2QHwuo8wtMq9ruYW.jpg');
+    }
+
+      #container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      input {
+        margin: 10px;
+        padding: 5px;
+        font-size: 16px;
+        text-align:center;
+      }
+
+      img{
+        align-items: center;
+        width: 230px;
+        height: auto;
+      }
+
+      button {
+        margin: 10px;
+        padding: 5px;
+        font-size: 16px;
+        background-color: lightblue;
+        border: none;
+        border-radius: 5px;
+      }
+      #result{
+        color: black;
+
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJW4VA2S3J7-tYV2jID5vYL_bdPqg-JnLlng&usqp=CAU" alt=""width="100%">
+      <input type="text" id="chickens" placeholder="Chickens">
+
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFU4ltlIjNqAD1iy2wk_6ZKxwFA3EM34UN1w&usqp=CAU" alt="">
+      <input type="text" id="cows" placeholder="Cows">
+
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJykNiWCEMhiev7-wr3YPtZACMuVwU0h-Upl1u7QERvpnmFVROs5TAOOSKWg_SfrGnqrs&usqp=CAU" alt="">
+      <input type="text" id="pigs" placeholder="Pigs">
+      <button id="calculate">Calculate</button>
+      <div id="result"></div>
+    </div>
+
+    <script>
+      const calculateBtn = document.querySelector("#calculate");
+      const chickensInput = document.querySelector("#chickens");
+      const cowsInput = document.querySelector("#cows");
+      const pigsInput = document.querySelector("#pigs");
+      const resultDiv = document.querySelector("#result");
+
+      calculateBtn.addEventListener("click", function() {
+        const chickens = Number(chickensInput.value);
+        const cows = Number(cowsInput.value);
+        const pigs = Number(pigsInput.value);
+
+        const totalLegs = chickens * 2 + cows * 4 + pigs * 4;
+        resultDiv.textContent = "Total Legs: " + totalLegs;
+      });
+    </script>
+  </body>
+</html>
